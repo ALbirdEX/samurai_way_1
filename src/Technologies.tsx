@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Technologies = () => {
+export const Technologies = () => {
     return (
         <div>
             <ul>
@@ -12,5 +12,3 @@ const Technologies = () => {
         </div>
     );
 }
-
-export default Technologies;
