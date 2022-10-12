@@ -1,0 +1,12 @@
+.menu {
+    grid-area: menu;
+    background-color: khaki;
+}
+
+.item {
+    color: fuchsia;
+}
+
+.active {
+    color: red;
+}

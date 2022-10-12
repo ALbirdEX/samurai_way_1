@@ -1,0 +1,9 @@
+.header {
+    grid-area: header;
+    background-color: skyblue;
+}
+
+/*картинка вложе и подтянет этот стиль*/
+.header img {
+    width: 320px;
+}
