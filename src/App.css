@@ -2,12 +2,17 @@
     margin: 0 auto;
     display: grid;
     width: 1920px;
-    height: 1080px;
+
 
     grid-template-areas:
             "header header"
              "menu content";
 
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 220px 10fr;
     grid-template-columns: 1fr 10fr;
+}
+
+.app-wrapper-content {
+    grid-area: content;
+    background-color: aquamarine;
 }
