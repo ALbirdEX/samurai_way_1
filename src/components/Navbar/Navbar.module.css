@@ -1,12 +1,18 @@
 .menu {
     grid-area: menu;
     background-color: khaki;
+    padding: 40px;
 }
 
-.item {
-    color: fuchsia;
+.noActive {
+    color: darkviolet;
+    text-decoration: none;
 }
 
-.active {
-    color: red;
+.activeLink {
+    color: black;
+    text-decoration: none;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    border-radius: 5px;
 }
