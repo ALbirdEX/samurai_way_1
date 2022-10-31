@@ -1,0 +1,34 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.dialogsItems {
+    margin: 20px;
+    background-color: lightcyan;
+    border-radius: 8px;
+}
+
+.dialogsItems .dialog {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.dialogsItems .active {
+    color: crimson;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    width: min-content;
+}
+
+.messages {
+    margin: 20px;
+    background-color: lightcyan;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.messages .message {
+    margin-left: 20px;
+
+}

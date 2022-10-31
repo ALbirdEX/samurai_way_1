@@ -17,7 +17,7 @@ export function App() {
             <div className="app-wrapper-content">
                 <Routes>
                     <Route path={"/profile"} element={<Profile/>}/>
-                    <Route path={"/dialog"} element={<Dialogs/>}/>
+                    <Route path={"/dialogs/*"} element={<Dialogs/>}/>
                     <Route path={"/new"} element={<New/>}/>
                     <Route path={"/music"} element={<Music/>}/>
                     <Route path={"/settings"} element={<Settings/>}/>

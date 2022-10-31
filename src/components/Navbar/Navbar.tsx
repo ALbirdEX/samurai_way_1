@@ -10,7 +10,7 @@ export function Navbar() {
                          className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Profile</NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to={"/dialog"}
+                <NavLink to={"/dialogs/"}
                          className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Message</NavLink>
             </div>
             <div className={classes.item}>
@@ -22,7 +22,8 @@ export function Navbar() {
                          className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Music</NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to={"/settings"} className={({isActive})=>isActive ? classes.activeLink : classes.noActive}>Settings</NavLink>
+                <NavLink to={"/settings"}
+                         className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Settings</NavLink>
             </div>
         </nav>
         /* <nav className={classes.menu}>
