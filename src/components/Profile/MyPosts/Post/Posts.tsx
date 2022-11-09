@@ -12,8 +12,13 @@ export function Posts(props: PropsType) {
             <div className={classes.item}>
                 <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="avtar_icon"/>
                 {props.message}
-            </div >
-            <span>Like: <span className={classes.likeCounts}>{props.likesCounts}</span></span>
+            </div>
+            <div>
+                Like:
+                <span className={classes.likeCounts}>
+                    {props.likesCounts}
+                </span>
+            </div>
         </div>
     );
 }
