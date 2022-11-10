@@ -1,6 +1,3 @@
-import React from 'react';
-import {render, screen} from '@testing-library/react';
-import {App} from './App';
 
 export type MessagesType = {
     id: number,
@@ -57,10 +54,3 @@ export const state: StateType = {
         ]
     }
 }
-
-
-test('renders learn react link', () => {
-  render(<App state={state}/>);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
