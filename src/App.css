@@ -4,6 +4,7 @@
     width: 1920px;
 
 
+
     grid-template-areas:
             "header header"
              "menu content";

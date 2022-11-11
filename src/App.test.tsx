@@ -2,6 +2,15 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import {App} from './App';
 
+export type FriendsType={
+    id: number,
+    name: string,
+}
+
+export type SidebarFriendsType = {
+    friends: FriendsType[]
+}
+
 export type MessagesType = {
     id: number,
     message: string
@@ -30,6 +39,7 @@ export type ProfilePageType = {
 export type StateType = {
     profilePage: ProfilePageType,
     dialogPage: DialogPageType
+    sidebarFriends: SidebarFriendsType,
 }
 
 export const state: StateType = {
@@ -54,6 +64,15 @@ export const state: StateType = {
             {id: 1, message: "Hi"},
             {id: 2, message: "What is you name"},
             {id: 3, message: ")))))"},
+        ]
+    },
+    sidebarFriends: {
+        friends: [
+            {id: 1, name: "Alex"},
+            {id: 2, name: "Igor"},
+            {id: 3, name: "Kostia"},
+            {id: 4, name: "leha"},
+            {id: 5, name: "Kiril"},
         ]
     }
 }

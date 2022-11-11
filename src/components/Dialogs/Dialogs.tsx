@@ -11,8 +11,8 @@ type DialogPropsType = {
 
 export function Dialogs(propps: DialogPropsType) {
 
-    const dialogsElements = propps.dialogsSate.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
-    const messagesElements = propps.dialogsSate.messages.map(message => <Message message={message.message}/>)
+    let dialogsElements = propps.dialogsSate.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
+    let messagesElements = propps.dialogsSate.messages.map(message => <Message message={message.message}/>)
 
     return (
         <div className={classes.dialogs}>

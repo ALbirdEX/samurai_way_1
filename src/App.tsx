@@ -18,7 +18,7 @@ export function App(props: AppPropsType) {
     return (
         <div className="app-wrapper">
             <Header/>
-            <Navbar/>
+            <Navbar friends={props.state.sidebarFriends.friends}/>
             <div className="app-wrapper-content">
                 <Routes>
                     <Route path={"/profile"} element={<Profile posts={props.state.profilePage.posts}/>}/>
