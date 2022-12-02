@@ -10,7 +10,7 @@ type NavbarPropsType = {
 
 export function Navbar(props: NavbarPropsType) {
 
-    let navbarFriends = props.friends.filter((friend) => friend.id <= 3).map(f => <NavbarFriends  name={f.name}/>)
+    let navbarFriends = props.friends.map(friend => <NavbarFriends key={friend.id} name={friend.name}/>)
 
     return (
         <div className={classes.menu}>
