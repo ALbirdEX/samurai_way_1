@@ -26,10 +26,15 @@
     background-color: lightcyan;
     border-radius: 8px;
     width: 50%;
+    padding-left: 30px;
 }
 
 .messages .message {
     margin-left: 20px;
+}
+
+.messageItem {
+    margin-top: 15px;
 }
 
 .imgAvatar {
