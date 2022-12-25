@@ -2,7 +2,8 @@ import React, {ChangeEvent} from 'react';
 import classes from './Dialog.module.css'
 import {Message} from "./Message/Message";
 import {DialogItem} from "./DialogItem/DialogItem";
-import {ActionTypes, SendMessageAC, DialogPageType, UpdateNewMessageBodyAC} from "../../redux/state";
+import {ActionTypes, DialogPageType,} from "../../redux/store";
+import {SendMessageAC, UpdateNewMessageBodyAC} from "../../redux/dialogsReducer";
 
 
 type DialogPropsType = {
@@ -21,7 +22,7 @@ export function Dialogs(props: DialogPropsType) {
         props.dispatch(UpdateNewMessageBodyAC(newTextInput))
     }
     const addMessagesClick = () => {
-       props.dispatch(SendMessageAC(props.newMessageBody))
+        props.dispatch(SendMessageAC(props.newMessageBody))
     }
     return (
         <div className={classes.dialogs}>
@@ -30,9 +31,14 @@ export function Dialogs(props: DialogPropsType) {
             </div>
             <div className={classes.messages}>
                 {messagesElements}
-                <div><input onChange={newTextMessageHandler} placeholder={"You message"} value={props.newMessageBody}/></div>
-                <div>
-                    <button onClick={addMessagesClick}>Add message</button>
+                <div className={classes.messageItem}>
+                    <div>
+                        <input onChange={newTextMessageHandler} placeholder={"You message"}
+                               value={props.newMessageBody}/>
+                    </div>
+                    <div>
+                        <button onClick={addMessagesClick}>Add message</button>
+                    </div>
                 </div>
             </div>
         </div>
