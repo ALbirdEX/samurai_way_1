@@ -1,6 +1,6 @@
 import {v1} from "uuid";
-import {AddPostAC, propfileReducer, UpdateNewPostTextAC} from "./profileReducer";
-import {dialogsReducer, SendMessageAC, UpdateNewMessageBodyAC} from "./dialogsReducer";
+import {ProfileActionType, profileReducer} from "./profileReducer";
+import {DialogActionType, dialogsReducer} from "./dialogsReducer";
 import {sidebarReducer} from "./sidebarReducer";
 
 export type FriendsType = {
@@ -49,10 +49,15 @@ export type StoreType = {
     dispatch: (action: ActionTypes) => void
 }
 
+/*
 export type ActionTypes = ReturnType<typeof AddPostAC>
     | ReturnType<typeof UpdateNewPostTextAC>
     | ReturnType<typeof UpdateNewMessageBodyAC>
     | ReturnType<typeof SendMessageAC>
+*/
+
+export type ActionTypes = ProfileActionType | DialogActionType
+
 
 export const store: StoreType = {
     _state: {
@@ -105,7 +110,7 @@ export const store: StoreType = {
     },
 
     dispatch(action) {
-        this._state.profilePage = propfileReducer(this._state.profilePage, action)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
         this._state.sidebarFriends = sidebarReducer(this._state.sidebarFriends, action)
         this._onChange()

@@ -1,9 +1,6 @@
 .app-wrapper {
     margin: 0 auto;
     display: grid;
-    width: 1920px;
-
-
 
     grid-template-areas:
             "header header"
@@ -11,9 +8,11 @@
 
     grid-template-rows: 220px 10fr;
     grid-template-columns: 1fr 10fr;
+    grid-gap: 5px;
 }
 
 .app-wrapper-content {
     grid-area: content;
-    background-color: aquamarine;
+    background-color: lightblue;
+    border-bottom-right-radius: 40px;
 }

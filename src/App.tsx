@@ -8,11 +8,14 @@ import {Route, Routes} from "react-router-dom";
 import {New} from "./components/New/New";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {StoreType} from "./redux/store";
+import {StoreType} from "./redux/reduxStore";
+import {ProfileActionType} from "./redux/profileReducer";
+import {DialogActionType} from "./redux/dialogsReducer";
 
 
 type AppPropsType = {
-    store: StoreType
+    store: StoreType,
+    dispatch: (action: ProfileActionType | DialogActionType) => void
 }
 
 export const App: React.FC<AppPropsType> = (props) => {

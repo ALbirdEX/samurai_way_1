@@ -1,13 +1,13 @@
 import React, {ChangeEvent} from 'react';
 import {Posts} from "./Post/Posts";
 import classes from './MyPosts.module.css'
-import {ActionTypes, PostsType} from "../../../redux/store";
-import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/profileReducer";
+import {PostsType} from "../../../redux/store";
+import {AddPostAC, ProfileActionType, UpdateNewPostTextAC} from "../../../redux/profileReducer";
 
 type MyPostsType = {
     posts: PostsType[]
     newPostText: string
-    dispatch: (action: ActionTypes) => void
+    dispatch: (action: ProfileActionType) => void
 }
 
 /*const UpdateNewPostTextActionCreater = (e) => {

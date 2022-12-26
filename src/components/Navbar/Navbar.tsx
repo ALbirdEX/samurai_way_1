@@ -36,9 +36,9 @@ export function Navbar(props: NavbarPropsType) {
                              className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Settings</NavLink>
                 </div>
             </nav>
-            <div className={classes.friends}>
-                <h3>*Friends*</h3>
-                {navbarFriends}
+            <div>
+                <h3 className={classes.friends}>Friends</h3>
+                <div className={classes.people}>{navbarFriends}</div>
             </div>
 
         </div>

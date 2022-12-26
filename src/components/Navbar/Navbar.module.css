@@ -1,22 +1,26 @@
 .menu {
     grid-area: menu;
-    background-color: khaki;
+    background-color: darkslategray;
     padding: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 .noActive {
-    color: darkviolet;
+    color: white;
     text-decoration: none;
 }
 
 .activeLink {
-    color: black;
+    color: white;
     text-decoration: none;
-    background-color: whitesmoke;
+    background-color: darkcyan;
     border-radius: 5px;
 }
 
 .friends {
-    background-color: #87ee9d;
-    border-radius: 8px;
+  color: mediumorchid;
+}
+
+.people {
+    color: white;
 }

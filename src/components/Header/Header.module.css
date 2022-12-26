@@ -1,6 +1,8 @@
 .header {
     grid-area: header;
-    background-color: skyblue;
+    background-color: darkslategray;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
 
 /*картинка вложе и подтянет этот стиль*/
