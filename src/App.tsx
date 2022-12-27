@@ -3,7 +3,6 @@ import './App.css'
 import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
-import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
 import {New} from "./components/New/New";
 import {Music} from "./components/Music/Music";
@@ -11,6 +10,7 @@ import {Settings} from "./components/Settings/Settings";
 import {StoreType} from "./redux/reduxStore";
 import {ProfileActionType} from "./redux/profileReducer";
 import {DialogActionType} from "./redux/dialogsReducer";
+import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
 
 
 type AppPropsType = {
@@ -31,7 +31,7 @@ export const App: React.FC<AppPropsType> = (props) => {
                     <Route path={"/profile"} element={<Profile posts={state.profilePage.posts}
                                                                dispatch={props.store.dispatch.bind(props.store)}
                                                                newPostText={state.profilePage.newPostText}/>}/>
-                    <Route path={"/dialogs/*"} element={<Dialogs dialogsState={state.dialogPage}
+                    <Route path={"/dialogs/*"} element={<DialogsContainer dialogsState={state.dialogPage}
                                                                  dispatch={props.store.dispatch.bind(props.store)}
                                                                  newMessageBody={state.dialogPage.newMessageBody}/>}/>
                     <Route path={"/new"} element={<New/>}/>

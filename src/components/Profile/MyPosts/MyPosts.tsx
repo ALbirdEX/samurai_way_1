@@ -2,12 +2,12 @@ import React, {ChangeEvent} from 'react';
 import {Posts} from "./Post/Posts";
 import classes from './MyPosts.module.css'
 import {PostsType} from "../../../redux/store";
-import {AddPostAC, ProfileActionType, UpdateNewPostTextAC} from "../../../redux/profileReducer";
 
 type MyPostsType = {
     posts: PostsType[]
     newPostText: string
-    dispatch: (action: ProfileActionType) => void
+    postText: (newTextTextarea: string) => void
+    addPost: (newText: string) => void
 }
 
 /*const UpdateNewPostTextActionCreater = (e) => {
@@ -24,11 +24,10 @@ export function MyPosts(props: MyPostsType) {
 
     const newPostTextHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
         let newTextTextarea = event.currentTarget.value
-        props.dispatch(UpdateNewPostTextAC(newTextTextarea))
-        //props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText:newTextTextarea})
+        props.postText(newTextTextarea)
     };
     const addPost = () => {
-        props.dispatch(AddPostAC(props.newPostText))
+        props.addPost(props.newPostText)
     }
 
     return (
@@ -37,7 +36,8 @@ export function MyPosts(props: MyPostsType) {
             <div>
                 <div>
                     <textarea value={props.newPostText}
-                              onChange={newPostTextHandler}/>
+                              onChange={newPostTextHandler}
+                              placeholder={"You message"}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add POST</button>
