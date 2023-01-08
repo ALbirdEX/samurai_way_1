@@ -14,10 +14,10 @@ export function Profile() {
     return (
         <div className={classes.content}>
             <ProfileInfo/>
-            {/*<MyPostsContainer
-                posts={props.posts}
+            <MyPostsContainer
+                /*posts={props.posts}
                 dispatch={props.dispatch}
-                newPostText={props.newPostText}/>*/}
+                newPostText={props.newPostText}*//>
         </div>
     );
 }

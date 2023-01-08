@@ -37,7 +37,8 @@ const initialState: InitialStateType = {
     newMessageBody: ""
 }
 
-export const dialogsReducer = (state: InitialStateType = initialState, action: DialogActionType): InitialStateType=> {
+export const dialogsReducer = (state: InitialStateType = initialState,
+                               action: DialogActionType): InitialStateType=> {
     switch (action.type) {
         case "UPDATE-NEW-MESSAGE-TEXT":
             state.newMessageBody = action.newBody

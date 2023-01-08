@@ -1,14 +1,14 @@
 import React, {ChangeEvent} from 'react';
 import {Posts} from "./Post/Posts";
 import classes from './MyPosts.module.css'
-import {PostsType} from "../../../redux/store";
+import {MyPostPropsType} from "./MyPostsContainer";
 
-type MyPostsType = {
+/*type MyPostsType = {
     posts: PostsType[]
     newPostText: string
     postText: (newTextTextarea: string) => void
     addPost: (newText: string) => void
-}
+}*/
 
 /*const UpdateNewPostTextActionCreater = (e) => {
     return{
@@ -16,7 +16,7 @@ type MyPostsType = {
     }
 }*/
 
-export function MyPosts(props: MyPostsType) {
+export function MyPosts(props: MyPostPropsType) {
 
     const postsElement = props.posts.map(post => <Posts key={post.id}
                                                         message={post.message}
