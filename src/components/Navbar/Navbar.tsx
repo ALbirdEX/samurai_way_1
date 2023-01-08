@@ -4,13 +4,13 @@ import {NavLink} from "react-router-dom";
 import {FriendsType} from "../../redux/store";
 import {NavbarFriends} from "./NavbarFriends";
 
-type NavbarPropsType = {
+/*type NavbarPropsType = {
     friends: FriendsType[]
-}
+}*/
 
-export function Navbar(props: NavbarPropsType) {
+export function Navbar() {
 
-    let navbarFriends = props.friends.map(friend => <NavbarFriends key={friend.id} name={friend.name}/>)
+  //  let navbarFriends = props.friends.map(friend => <NavbarFriends key={friend.id} name={friend.name}/>)
 
     return (
         <div className={classes.menu}>
@@ -38,7 +38,7 @@ export function Navbar(props: NavbarPropsType) {
             </nav>
             <div>
                 <h3 className={classes.friends}>Friends</h3>
-                <div className={classes.people}>{navbarFriends}</div>
+                {/*<div className={classes.people}>{navbarFriends}</div>*/}
             </div>
 
         </div>

@@ -2,8 +2,8 @@ import React, {ChangeEvent} from 'react';
 import classes from './Dialog.module.css'
 import {Message} from "./Message/Message";
 import {DialogItem} from "./DialogItem/DialogItem";
-import {DialogsType, MessagesType,} from "../../redux/store";
-
+import {DialogsPropsType} from "./DialogsContainer";
+/*
 type DialogPropsType = {
     dialogs: DialogsType[]
     messages: MessagesType[]
@@ -11,8 +11,9 @@ type DialogPropsType = {
     newTextMessage: (newTextInput: string) => void
     addMessages: (newMessageBody: string) => void
 }
+*/
 
-export function Dialogs(props: DialogPropsType) {
+export function Dialogs(props: DialogsPropsType) {
 
     let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
     let messagesElements = props.messages.map(message => <Message message={message.message}/>)

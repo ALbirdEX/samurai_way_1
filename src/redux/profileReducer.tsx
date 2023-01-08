@@ -1,6 +1,8 @@
 import {v1} from "uuid";
 import {ActionTypes, PostsType, ProfilePageType} from "./store";
 
+
+
 const initialState = {
     newPostText: "Напиши свой пост",
     posts: [

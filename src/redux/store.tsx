@@ -1,17 +1,16 @@
 import {v1} from "uuid";
-import {ProfileActionType, profileReducer} from "./profileReducer";
-import {DialogActionType, dialogsReducer} from "./dialogsReducer";
-import {sidebarReducer} from "./sidebarReducer";
+import {ProfileActionType} from "./profileReducer";
+import {DialogActionType} from "./dialogsReducer";
 
 export type FriendsType = {
     id: string,
     name: string,
 }
-export type MessagesType = {
+type MessagesType = {
     id: string,
     message: string
 }
-export type DialogsType = {
+type DialogsType = {
     id: string,
     name: string,
 }
@@ -24,7 +23,7 @@ export type ProfilePageType = {
     posts: PostsType[]
     newPostText: string
 }
-export type DialogPageType = {
+type DialogPageType = {
     dialogs: DialogsType[],
     messages: MessagesType[],
     newMessageBody: string
@@ -110,9 +109,9 @@ export const store: StoreType = {
     },
 
     dispatch(action) {
-        this._state.profilePage = profileReducer(this._state.profilePage, action)
+       /* this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
         this._state.sidebarFriends = sidebarReducer(this._state.sidebarFriends, action)
-        this._onChange()
+        this._onChange()*/
     }
 }

@@ -18,9 +18,10 @@ export function MyPostsContainer(props: MyPostsContainerType) {
     }
 
     return (
-        <MyPosts posts={props.posts}
-                 postText={newPostTextHandler}
-                 addPost={addPost}
-                 newPostText={props.newPostText}/>
+        <MyPosts
+            posts={props.posts}
+            postText={newPostTextHandler}
+            addPost={addPost}
+            newPostText={props.newPostText}/>
     )
 }
