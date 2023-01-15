@@ -1,5 +1,4 @@
-import {PostsType} from "../../../redux/store";
-import {AddPostAC, UpdateNewPostTextAC} from "../../../redux/profileReducer";
+import {addPostAC, ProfilePageType, updateNewPostTextAC} from "../../../redux/profile-reducer";
 import {MyPosts} from "./MyPosts";
 import {connect} from "react-redux";
 import {AppStateType} from "../../../redux/redux-store";
@@ -27,10 +26,12 @@ export function MyPostsContainer(props: MyPostsContainerType) {
             newPostText={props.newPostText}/>
     )
 }*/
-type MapStatePropsType = {
+/*type MapStatePropsType = {
     posts: PostsType[]
     newPostText: string
-}
+}*/
+
+type MapStatePropsType = ProfilePageType
 
 type MapDispatchPropsType = {
     addPost: (newText: string) => void
@@ -49,10 +50,10 @@ const mapStateToProps = (state: AppStateType): MapStatePropsType => {
 const mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
     return {
         addPost: (newText: string) => {
-            dispatch(AddPostAC(newText))
+            dispatch(addPostAC(newText))
         },
         postText: (newTextTextarea: string) => {
-            dispatch(UpdateNewPostTextAC(newTextTextarea))
+            dispatch(updateNewPostTextAC(newTextTextarea))
         }
     }
 }

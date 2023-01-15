@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-const rerenderEntireTree = () => {
+
     root.render(
         <BrowserRouter>
             <Provider store={store}>
@@ -22,8 +22,3 @@ const rerenderEntireTree = () => {
             </Provider>
         </BrowserRouter>
     );
-}
-
-rerenderEntireTree();
-store.subscribe(rerenderEntireTree);
-

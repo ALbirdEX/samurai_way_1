@@ -8,6 +8,8 @@ import {Settings} from "./components/Settings/Settings";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
 import {Profile} from "./components/Profile/Profile";
 import {Navbar} from "./components/Navbar/Navbar";
+import {Users} from "./components/Users/Users";
+import {UsersContainer} from "./components/Users/UsersContainer";
 
 
 /*type AppPropsType = {
@@ -15,8 +17,7 @@ import {Navbar} from "./components/Navbar/Navbar";
     dispatch: (action: ProfileActionType | DialogActionType) => void
 }*/
 
-export const
-    App: React.FC = () => {
+export const App: React.FC = () => {
 
         //const state = props.store.getState()
 
@@ -33,6 +34,7 @@ export const
                               dispatch={props.store.dispatch.bind(props.store)}
                               newPostText={state.profilePage.newPostText}*/
                         />}/>
+                        <Route path={"/users"} element={<UsersContainer/>}/>
                         <Route path={"/dialogs/*"} element={<DialogsContainer
                             /*dialogsState={state.dialogPage}
                             dispatch={props.store.dispatch.bind(props.store)}

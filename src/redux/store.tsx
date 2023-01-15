@@ -1,6 +1,6 @@
 import {v1} from "uuid";
-import {ProfileActionType} from "./profileReducer";
-import {DialogActionType} from "./dialogsReducer";
+import {ProfileActionType} from "./profile-reducer";
+import {DialogActionType} from "./dialogs-reducer";
 
 export type FriendsType = {
     id: string,

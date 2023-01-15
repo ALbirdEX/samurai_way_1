@@ -9,7 +9,6 @@ import {MyPostPropsType} from "./MyPostsContainer";
     postText: (newTextTextarea: string) => void
     addPost: (newText: string) => void
 }*/
-
 /*const UpdateNewPostTextActionCreater = (e) => {
     return{
         type: "UPDATE-NEW-POST-TEXT", newText: event.currentTarget.value
@@ -37,7 +36,7 @@ export function MyPosts(props: MyPostPropsType) {
                 <div>
                     <textarea value={props.newPostText}
                               onChange={newPostTextHandler}
-                              placeholder={"You message"}/>
+                              placeholder={"You post"}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add POST</button>

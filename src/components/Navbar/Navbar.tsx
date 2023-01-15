@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
-import {FriendsType} from "../../redux/store";
-import {NavbarFriends} from "./NavbarFriends";
 
 /*type NavbarPropsType = {
     friends: FriendsType[]
@@ -18,6 +16,10 @@ export function Navbar() {
                 <div>
                     <NavLink to={"/profile"}
                              className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Profile</NavLink>
+                </div>
+                <div>
+                    <NavLink to={"/users"}
+                             className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Users</NavLink>
                 </div>
                 <div>
                     <NavLink to={"/dialogs/"}

@@ -15,8 +15,8 @@ type DialogPropsType = {
 
 export function Dialogs(props: DialogsPropsType) {
 
-    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
-    let messagesElements = props.messages.map(message => <Message message={message.message}/>)
+    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} key = {dialog.id}/>)
+    let messagesElements = props.messages.map(message => <Message message={message.message}  key = {message.id}/>)
 
     const newTextMessageHandler = (event: ChangeEvent<HTMLInputElement>) => {
         let newTextInput = event.currentTarget.value
