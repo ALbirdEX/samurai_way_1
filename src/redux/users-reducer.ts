@@ -1,14 +1,16 @@
-import {v1} from "uuid";
-
 export type LocationType = {
     city: string,
     country: string,
 }
+export type PhotosType = {
+    small?: string,
+    photo: string
+}
 export type UserType = {
     id: string,
-    photoUrl: string,
+    photos: PhotosType ,
     followed: boolean,
-    fullName: string,
+    name: string,
     status: string,
     location: LocationType
 }
@@ -16,37 +18,20 @@ export type UsersPageType = {
     users: Array<UserType>
 }
 
-export const photoUrl = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+//export const photoUrl = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
 
-const initialState: UsersPageType = {
-    users: [
-        {
-            id: v1(), photoUrl: photoUrl, followed: false, fullName: "Alex", status: "I`m proger", location:
-                {city: "Mogilev", country: "Belarus"}
-        },
-        {
-            id: v1(), photoUrl: photoUrl, followed: true, fullName: "Viktor", status: "....", location:
-                {city: "Kiev", country: "Ukraine"}
-        },
-        {
-            id: v1(), photoUrl: photoUrl, followed: false, fullName: "Felix", status: "I`m GRUD", location:
-                {city: "NY", country: "USA"}
-        },
-    ]
-}
+const initialState: UsersPageType = {users: []}
 
 export const usersReducer = (state: UsersPageType = initialState,
                              action: UsersActionType): UsersPageType => {
     switch (action.type) {
         case "FOLLOW": {
-            debugger
             return {
                 ...state,
                 users: [...state.users.map(u => u.id === action.userId ? {...u, followed: true} : u)]
             }
         }
         case "UNFOLLOW": {
-            debugger
             return {
                 ...state,
                 users: [...state.users.map(u => u.id === action.userId ? {...u, followed: false} : u)]
@@ -55,7 +40,8 @@ export const usersReducer = (state: UsersPageType = initialState,
         case "SET-USERS": {
             return {
                 ...state,
-                users: [...state.users,  action.users]
+                //users: [...state.users, ...action.users]  //???
+                users: action.users
             }
         }
         default:
@@ -78,7 +64,7 @@ export const unfollowAC = (userId: string) => {
     } as const
 }
 
-export const setUsersAC = (users: UserType) => {
+export const setUsersAC = (users: Array<UserType>) => {
     return{
         type: "SET-USERS",
         users: users
