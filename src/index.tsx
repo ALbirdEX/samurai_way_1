@@ -16,8 +16,6 @@ const root = ReactDOM.createRoot(
         <BrowserRouter>
             <Provider store={store}>
                 <App
-                    //store={store}
-                    //dispatch={store.dispatch.bind(store)}
                 />
             </Provider>
         </BrowserRouter>

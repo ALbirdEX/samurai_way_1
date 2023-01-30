@@ -8,7 +8,7 @@ export type PhotosType = {
 }
 export type UserType = {
     id: string,
-    photos: PhotosType ,
+    photos: PhotosType,
     followed: boolean,
     name: string,
     status: string,
@@ -16,11 +16,26 @@ export type UserType = {
 }
 export type UsersPageType = {
     users: Array<UserType>
+    pageSize: number,
+    totalUsersCount: number,
+    currentPage: number
 }
+
+export type UsersActionType =
+    FollowActionType
+    | UnfollowActionType
+    | SetUsersActionType
+    | SetCurrentPageActionType
+    | setTotalUsersCountActionType
 
 //export const photoUrl = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
 
-const initialState: UsersPageType = {users: []}
+const initialState: UsersPageType = {
+    users: [],
+    pageSize: 5,         //отображаемое количество на странице
+    totalUsersCount: 0,  //общее число на сервере
+    currentPage: 1       //начальная страница
+}
 
 export const usersReducer = (state: UsersPageType = initialState,
                              action: UsersActionType): UsersPageType => {
@@ -44,6 +59,18 @@ export const usersReducer = (state: UsersPageType = initialState,
                 users: action.users
             }
         }
+        case "SET-CURRENT-PAGE": {
+            return {
+                ...state,
+                currentPage: action.currentPage
+            }
+        }
+        case "SET-TOTAL-USERS-COUNT": {
+            return {
+                ...state,
+                totalUsersCount: action.totalUsersCount
+            }
+        }
         default:
             return state
     }
@@ -65,14 +92,28 @@ export const unfollowAC = (userId: string) => {
 }
 
 export const setUsersAC = (users: Array<UserType>) => {
-    return{
+    return {
         type: "SET-USERS",
         users: users
+    } as const
+}
+
+export const setCurrentPageAC = (currentPage: number) => {
+    return {
+        type: "SET-CURRENT-PAGE",
+        currentPage: currentPage
+    } as const
+}
+
+export const setTotalUsersCountAC = (totalCount: number) => {
+    return {
+        type: "SET-TOTAL-USERS-COUNT",
+        totalUsersCount: totalCount
     } as const
 }
 
 type FollowActionType = ReturnType<typeof followAC>
 type UnfollowActionType = ReturnType<typeof unfollowAC>
 type SetUsersActionType = ReturnType<typeof setUsersAC>
-
-export type UsersActionType = FollowActionType | UnfollowActionType | SetUsersActionType
+type SetCurrentPageActionType = ReturnType<typeof setCurrentPageAC>
+type setTotalUsersCountActionType = ReturnType<typeof setTotalUsersCountAC>

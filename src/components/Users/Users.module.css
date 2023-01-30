@@ -1,5 +1,9 @@
-.postsBlock{
+.postsBlock {
     margin: 25px;
+}
+
+.selectedPage {
+    font-weight: bold;
 }
 
 .users img {
