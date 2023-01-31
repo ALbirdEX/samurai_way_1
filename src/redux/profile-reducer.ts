@@ -9,7 +9,13 @@ export type PostsType = {
 export type ProfilePageType = {
     newPostText: string
     posts: PostsType[]
+    //profile: any               //fix
 }
+
+export type ProfileActionType =
+    AddPostActionType
+    | UpdateNewPostActionType
+    | SetUserProfileActionType
 
 
 const initialState: ProfilePageType = {
@@ -19,7 +25,8 @@ const initialState: ProfilePageType = {
         {id: v1(), message: ":)", likesCounts: 3},
         {id: v1(), message: "I is good", likesCounts: 3},
         {id: v1(), message: "Yo", likesCounts: 3},
-        {id: v1(), message: "Yo", likesCounts: 3},]
+        {id: v1(), message: "Yo", likesCounts: 3},],
+    //profile: null
 }
 
 export const profileReducer = (state: ProfilePageType = initialState,
@@ -31,13 +38,20 @@ export const profileReducer = (state: ProfilePageType = initialState,
                 message: state.newPostText = action.postText,
                 likesCounts: 0
             }
-            return  {
+            return {
                 ...state,
                 posts: [...state.posts, newPost],
-                newPostText: ''}
+                newPostText: ''
+            }
         }
-        case "UPDATE-NEW-POST-TEXT":{
-            return  {...state, newPostText: action.newText}}
+        case "UPDATE-NEW-POST-TEXT": {
+            return {...state, newPostText: action.newText}
+        }
+       /* case "SET-USER-PROFILE": {
+            return {...state,
+                profile: action.profile
+            }
+        }*/
         default:
             return state
     }
@@ -58,7 +72,14 @@ export const updateNewPostTextAC = (newTextTextarea: string) => {
     } as const
 }
 
+export const setUserProfile = (profile: any) => {
+    return {
+        type: "SET-USER-PROFILE",
+        profile: profile
+    } as const
+}
+
 type AddPostActionType = ReturnType<typeof addPostAC>
 type UpdateNewPostActionType = ReturnType<typeof updateNewPostTextAC>
+type SetUserProfileActionType = ReturnType<typeof setUserProfile>
 
-export type ProfileActionType = AddPostActionType | UpdateNewPostActionType

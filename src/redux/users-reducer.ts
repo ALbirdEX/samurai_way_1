@@ -18,7 +18,8 @@ export type UsersPageType = {
     users: Array<UserType>
     pageSize: number,
     totalUsersCount: number,
-    currentPage: number
+    currentPage: number,
+    isFetching: boolean
 }
 
 export type UsersActionType =
@@ -27,6 +28,7 @@ export type UsersActionType =
     | SetUsersActionType
     | SetCurrentPageActionType
     | setTotalUsersCountActionType
+    | toggleIsFetchingActionType
 
 //export const photoUrl = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
 
@@ -34,7 +36,8 @@ const initialState: UsersPageType = {
     users: [],
     pageSize: 5,         //отображаемое количество на странице
     totalUsersCount: 0,  //общее число на сервере
-    currentPage: 1       //начальная страница
+    currentPage: 1,       //начальная страница
+    isFetching: false     //получение ответа от сервира
 }
 
 export const usersReducer = (state: UsersPageType = initialState,
@@ -71,12 +74,18 @@ export const usersReducer = (state: UsersPageType = initialState,
                 totalUsersCount: action.totalUsersCount
             }
         }
+        case "TOGGLE-IS-FETCHING": {
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
+        }
         default:
             return state
     }
 }
 
-export const followAC = (userId: string) => {
+export const follow = (userId: string) => {  //были AC, удали для дальнейшего сокпащения в mapDispatchTo Props
     return {
         type: "FOLLOW",
         userId: userId
@@ -84,36 +93,44 @@ export const followAC = (userId: string) => {
     } as const
 }
 
-export const unfollowAC = (userId: string) => {
+export const unfollow = (userId: string) => {
     return {
         type: "UNFOLLOW",
         userId: userId
     } as const
 }
 
-export const setUsersAC = (users: Array<UserType>) => {
+export const setUsers = (users: Array<UserType>) => {
     return {
         type: "SET-USERS",
         users: users
     } as const
 }
 
-export const setCurrentPageAC = (currentPage: number) => {
+export const setCurrentPage = (currentPage: number) => {
     return {
         type: "SET-CURRENT-PAGE",
         currentPage: currentPage
     } as const
 }
 
-export const setTotalUsersCountAC = (totalCount: number) => {
+export const setTotalUsersCount = (totalCount: number) => {
     return {
         type: "SET-TOTAL-USERS-COUNT",
         totalUsersCount: totalCount
     } as const
 }
 
-type FollowActionType = ReturnType<typeof followAC>
-type UnfollowActionType = ReturnType<typeof unfollowAC>
-type SetUsersActionType = ReturnType<typeof setUsersAC>
-type SetCurrentPageActionType = ReturnType<typeof setCurrentPageAC>
-type setTotalUsersCountActionType = ReturnType<typeof setTotalUsersCountAC>
+export const toggleIsFetching = (isFetching: boolean) => {
+    return {
+        type: "TOGGLE-IS-FETCHING",
+        isFetching: isFetching
+    } as const
+}
+
+type FollowActionType = ReturnType<typeof follow>  //были AC, удали для дальнейшего сокпащения в mapDispatchTo Props
+type UnfollowActionType = ReturnType<typeof unfollow>
+type SetUsersActionType = ReturnType<typeof setUsers>
+type SetCurrentPageActionType = ReturnType<typeof setCurrentPage>
+type setTotalUsersCountActionType = ReturnType<typeof setTotalUsersCount>
+type toggleIsFetchingActionType = ReturnType<typeof toggleIsFetching>
