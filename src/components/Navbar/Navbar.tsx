@@ -14,7 +14,7 @@ export function Navbar() {
         <div className={classes.menu}>
             <nav>
                 <div>
-                    <NavLink to={"/profile"}
+                    <NavLink to={"/profile/"}
                              className={({isActive}) => isActive ? classes.activeLink : classes.noActive}>Profile</NavLink>
                 </div>
                 <div>

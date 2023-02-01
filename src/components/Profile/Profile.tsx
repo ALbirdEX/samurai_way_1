@@ -2,17 +2,16 @@ import React from 'react';
 import classes from './Profile.module.css'
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
+import {ProfileInfoType} from "../../redux/profile-reducer";
 
-/*type ProfilePropsType = {
-    posts: PostsType[]
-    newPostText: string
-    dispatch: (action: ActionTypes) => void
-}*/
+type ProfilePropsType ={
+    profileInfo: ProfileInfoType | null
+}
 
-export function Profile() {
+export function Profile(props: ProfilePropsType) {
     return (
         <div className={classes.content}>
-            <ProfileInfo/>
+            <ProfileInfo profileInfo={props.profileInfo}/>
             <MyPostsContainer
                 /*posts={props.posts}
                 dispatch={props.dispatch}

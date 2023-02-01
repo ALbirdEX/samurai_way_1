@@ -2,7 +2,7 @@ import {v1} from "uuid";
 import {ProfileActionType} from "./profile-reducer";
 import {DialogActionType} from "./dialogs-reducer";
 
-export type FriendsType = {
+type FriendsType = {
     id: string,
     name: string,
 }
@@ -14,12 +14,12 @@ type DialogsType = {
     id: string,
     name: string,
 }
-export type PostsType = {
+type PostsType = {
     id: string,
     message: string,
     likesCounts: number
 }
-export type ProfilePageType = {
+type ProfilesPageType = {
     posts: PostsType[]
     newPostText: string
 }
@@ -28,17 +28,17 @@ type DialogPageType = {
     messages: MessagesType[],
     newMessageBody: string
 }
-export type SidebarFriendsType = {
+type SidebarFriendsType = {
     friends: FriendsType[]
 }
 
-export type RootStateType = {
-    profilePage: ProfilePageType,
+type RootStateType = {
+    profilePage: ProfilesPageType,
     dialogPage: DialogPageType,
     sidebarFriends: SidebarFriendsType,
 }
 
-export type StoreType = {
+type StoreType = {
     _state: RootStateType
     _onChange: () => void
 
@@ -55,10 +55,11 @@ export type ActionTypes = ReturnType<typeof AddPostAC>
     | ReturnType<typeof SendMessageAC>
 */
 
-export type ActionTypes = ProfileActionType | DialogActionType
+type ActionTypes = ProfileActionType | DialogActionType
 
 
-export const store: StoreType = {
+/*
+const store: StoreType = {
     _state: {
         profilePage: {
             newPostText: "Напиши свой пост",
@@ -109,9 +110,9 @@ export const store: StoreType = {
     },
 
     dispatch(action) {
-       /* this._state.profilePage = profileReducer(this._state.profilePage, action)
+       /!* this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
         this._state.sidebarFriends = sidebarReducer(this._state.sidebarFriends, action)
-        this._onChange()*/
+        this._onChange()*!/
     }
-}
+}*/

@@ -6,9 +6,9 @@ import {New} from "./components/New/New";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
-import {Profile} from "./components/Profile/Profile";
 import {Navbar} from "./components/Navbar/Navbar";
 import {UsersContainer} from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 /*type AppPropsType = {
@@ -28,7 +28,7 @@ export const App: React.FC = () => {
                 />
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path={"/profile"} element={<Profile
+                        <Route path={"/profile/*"} element={<ProfileContainer
                              /* posts={state.profilePage.posts}
                               dispatch={props.store.dispatch.bind(props.store)}
                               newPostText={state.profilePage.newPostText}*/

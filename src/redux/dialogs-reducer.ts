@@ -14,6 +14,8 @@ export type DialogPageType = {
     newMessageBody: string
 }
 
+export type DialogActionType = SendMessageActionType | UpdateNewMessageBody
+
 /*export type InitialStateType = DialogPageType*/
 
 //export type InitialStateType = typeof  initialState
@@ -70,4 +72,3 @@ export const updateNewMessageBodyAC = (newTextInput: string) => {
 type SendMessageActionType = ReturnType<typeof sendMessageAC>
 type UpdateNewMessageBody = ReturnType<typeof updateNewMessageBodyAC>
 
-export type DialogActionType = SendMessageActionType | UpdateNewMessageBody

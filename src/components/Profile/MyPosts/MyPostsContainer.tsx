@@ -1,4 +1,4 @@
-import {addPostAC, ProfilePageType, updateNewPostTextAC} from "../../../redux/profile-reducer";
+import {addPostAC, PostsType, updateNewPostTextAC} from "../../../redux/profile-reducer";
 import {MyPosts} from "./MyPosts";
 import {connect} from "react-redux";
 import {AppStateType} from "../../../redux/redux-store";
@@ -26,12 +26,12 @@ export function MyPostsContainer(props: MyPostsContainerType) {
             newPostText={props.newPostText}/>
     )
 }*/
-/*type MapStatePropsType = {
+type MapStatePropsType = {
     posts: PostsType[]
     newPostText: string
-}*/
+}
 
-type MapStatePropsType = ProfilePageType
+/*type MapStatePropsType = ProfilePageType*/
 
 type MapDispatchPropsType = {
     addPost: (newText: string) => void

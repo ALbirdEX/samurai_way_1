@@ -1,6 +1,14 @@
-import {ActionTypes, SidebarFriendsType} from "./store";
 import {v1} from "uuid";
 
+type ActionTypes = ""
+
+type FriendsType = {
+    id: string,
+    name: string,
+}
+type SidebarFriendsType = {
+    friends: FriendsType[]
+}
 const initialState = {
     friends: [
         {id: v1(), name: "Alex"},
